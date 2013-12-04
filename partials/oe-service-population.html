@@ -1,0 +1,26 @@
+<div class="logo-main"></div>
+
+
+<div class="container oeStats active-pop">
+    <div class="well">
+        <h1>Total Bloom Service Population</h1>
+        <div class="wrapper">
+            <div ng-if="!loadFailed">
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="m in totalMembers">
+                        <span class="badge badge-info">{{m.value}}</span>
+                        {{m.title}}
+                    </li>
+                </ul>
+            </div>
+            <div ng-if="loadFailed">
+                <div class="alert alert-danger">
+                    <span class="glyphicon glyphicon-warning-sign"></span>
+                    Failed to load service population file. Check server output for details.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-include src="'partials/footer.html'"></div>

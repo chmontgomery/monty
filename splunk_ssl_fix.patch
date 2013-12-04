@@ -1,0 +1,13 @@
+--- node_modules/splunk-sdk/lib/platform/node/node_http.js	2012-12-12 18:05:08.000000000 -0600
++++ /Users/mcacek/Scratch/node_http.js	2013-05-24 15:13:53.000000000 -0500
+@@ -32,7 +32,9 @@
+                 headers: message.headers || {},
+                 body: message.body || "",
+                 jar: false,
+-                followAllRedirects: true
++	    	followAllRedirects: true,
++	    	strictSSL: false,
++		rejectUnauthorized: false
+             };
+             
+             request_options.headers["Content-Length"] = request_options.body.length;

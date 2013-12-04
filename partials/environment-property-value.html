@@ -1,0 +1,10 @@
+<div>
+    <div ng-switch on="(key === 'buildUrl' || key === 'buildChangesUrl')">
+        <div ng-switch-when="true">
+            <a ng-href="{{value}}" target="_blank">{{ value }}</a>
+        </div>
+        <div ng-switch-default>
+            {{ value }}
+        </div>
+    </div>
+</div>

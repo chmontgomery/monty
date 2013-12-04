@@ -1,0 +1,73 @@
+<div>
+    <div ng-include src="'partials/oe-view-as-nav.html'"></div>
+
+    <h1>Latest Plan Year by Employer <small><span class="glyphicon glyphicon-question-sign" tooltip="questionTooltip"></span></small></h1>
+
+    <div class="wrapper">
+        <div class="oe-tools-wrapper">
+            <div class="oe-table-filter">
+                <div>
+                    filter by:
+                    <select ng-model="selectedFilterBy" ng-options="f.name for f in filterBys">
+                    </select>
+                </div>
+                <div class="pull-right text-warning scroll-for-more">
+                    scroll for more <span class="glyphicon glyphicon-hand-right"></span>
+                </div>
+            </div>
+            <div class="oe-table-total">
+                Showing <span class="badge badge-important">{{(sortedOEStats | onBoolProperty:selectedFilterBy.propName).length}}</span> Employers
+                <div ng-show="selectedEnvironment" class="oe-open-link-on">
+                    Open links on
+            <span>
+                <select ng-model="selectedEnvironment"
+                        ng-options="e.title for e in environments"></select>
+            </span>
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <div class="table-responsive">
+            <table class="dates-table table-striped table-bordered table-hover">
+                <tr>
+                    <th ng-click="sortBy('employerName')">Employer Name</th>
+                    <th ng-click="sortBy('sponsorName')">Sponsor Name</th>
+                    <th ng-click="sortBy('memberCount')">Total Members</th>
+                    <th ng-click="sortBy('openEnrollmentStartDate')">OE Start</th>
+                    <th ng-click="sortBy('openEnrollmentEndDate')">OE End</th>
+                    <th ng-click="sortBy('insuranceCoverageStartDate')">Insurance Coverage Start</th>
+                    <th class="not-sortable">Rollover</th>
+                    <th ng-click="sortBy('planYearCount')">Years with Bloom</th>
+                </tr>
+                <tr ng-repeat="stat in sortedOEStats | onBoolProperty:selectedFilterBy.propName">
+                    <td>
+                        <a target="_blank" href="{{selectedEnvironment.url}}/employer/show/?bloomId={{stat.employerBloomId}}">{{stat.employerName}}</a>
+                        <span ng-show="stat.employerIsNew" class="badge badge-important">New</span>
+                    </td>
+                    <td>
+                        <a target="_blank" href="{{selectedEnvironment.url}}/sponsor/show/?bloomId={{stat.sponsorBloomId}}">{{stat.sponsorName}}</a>
+                    </td>
+                    <td>
+                        <span class="badge badge-info">{{stat.memberCount}}</span>
+                    </td>
+                    <td>{{stat.openEnrollmentStartDate | date:'M/d/yyyy'}}</td>
+                    <td>{{stat.openEnrollmentEndDate | date:'M/d/yyyy'}}</td>
+                    <td>{{stat.insuranceCoverageStartDate | date:'M/d/yyyy'}}</td>
+                    <td>
+                <span ng-show="stat.rolloverEligible" class="badge badge-warning" title="Rollover for next year not done yet">
+                    eligible
+                </span>
+                <span ng-show="stat.upcomingPlanYear" class="badge badge-success" title="Rollover for next year complete">
+                    done
+                </span>
+                    </td>
+                    <td>
+                <span class="badge badge-info" title="With Bloom since {{ stat.employerStartDate | date:'M/d/yyyy' }}">
+                    {{stat.planYearCount}}
+                </span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

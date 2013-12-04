@@ -1,0 +1,179 @@
+.green-light-16 {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 20px;
+  background-image: -moz-radial-gradient(5px 5px 45deg, circle cover, lightgreen 0%, green 100%, blue 5%);
+  background-image: -webkit-radial-gradient(5px 5px, circle cover, lightgreen, green);
+  background-image: radial-gradient(5px 5px 45deg, circle cover, lightgreen 0%, green 100%, blue 5%);
+  border: 1px solid green;
+}
+
+.red-light-16 {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 20px;
+  background-image: -moz-radial-gradient(5px 5px 45deg, circle cover, LightCoral 0%, red 100%, blue 5%);
+  background-image: -webkit-radial-gradient(5px 5px, circle cover, LightCoral, red);
+  background-image: radial-gradient(5px 5px 45deg, circle cover, LightCoral 0%, red 100%, blue 5%);
+  border: 1px solid red;
+}
+
+.yellow-light-16 {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 20px;
+  background-image: -moz-radial-gradient(5px 5px 45deg, circle cover, yellow 0%, #f89406 100%, blue 5%);
+  background-image: -webkit-radial-gradient(5px 5px, circle cover, yellow, #f89406);
+  background-image: radial-gradient(5px 5px 45deg, circle cover, yellow 0%, #f89406 100%, blue 5%);
+  border: 1px solid #f89406;
+}
+
+.grey-light-16 {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 20px;
+  background-image: -moz-radial-gradient(5px 5px 45deg, circle cover, white 0%, grey 100%, blue 5%);
+  background-image: -webkit-radial-gradient(5px 5px, circle cover, white, grey);
+  background-image: radial-gradient(5px 5px 45deg, circle cover, white 0%, grey 100%, blue 5%);
+  border: 1px solid grey;
+}
+
+.green-light-32 {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 20px;
+  background-image: -moz-radial-gradient(10px 10px 45deg, circle cover, lightgreen 0%, green 100%, blue 5%);
+  background-image: -webkit-radial-gradient(10px 10px, circle cover, lightgreen, green);
+  background-image: radial-gradient(10px 10px 45deg, circle cover, lightgreen 0%, green 100%, blue 5%);
+  border: 1px solid green;
+}
+
+.red-light-32 {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 20px;
+  background-image: -moz-radial-gradient(10px 10px 45deg, circle cover, LightCoral 0%, red 100%, blue 5%);
+  background-image: -webkit-radial-gradient(10px 10px, circle cover, LightCoral, red);
+  background-image: radial-gradient(10px 10px 45deg, circle cover, LightCoral 0%, red 100%, blue 5%);
+  border: 1px solid red;
+}
+
+.yellow-light-32 {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 20px;
+  background-image: -moz-radial-gradient(10px 10px 45deg, circle cover, yellow 0%, #f89406 100%, blue 5%);
+  background-image: -webkit-radial-gradient(10px 10px, circle cover, yellow, #f89406);
+  background-image: radial-gradient(10px 10px 45deg, circle cover, yellow 0%, #f89406 100%, blue 5%);
+  border: 1px solid #f89406;
+}
+
+.grey-light-32 {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 20px;
+  background-image: -moz-radial-gradient(10px 10px 45deg, circle cover, white 0%, grey 100%, blue 5%);
+  background-image: -webkit-radial-gradient(10px 10px, circle cover, white, grey);
+  background-image: radial-gradient(10px 10px 45deg, circle cover, white 0%, grey 100%, blue 5%);
+  border: 1px solid grey;
+}
+
+.green-light-40 {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 20px;
+  background-image: -moz-radial-gradient(15px 15px 45deg, circle cover, lightgreen 0%, green 100%, blue 5%);
+  background-image: -webkit-radial-gradient(15px 15px, circle cover, lightgreen, green);
+  background-image: radial-gradient(15px 15px 45deg, circle cover, lightgreen 0%, green 100%, blue 5%);
+  border: 1px solid green;
+}
+
+.red-light-40 {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 20px;
+  background-image: -moz-radial-gradient(15px 15px 45deg, circle cover, LightCoral 0%, red 100%, blue 5%);
+  background-image: -webkit-radial-gradient(15px 15px, circle cover, LightCoral, red);
+  background-image: radial-gradient(15px 15px 45deg, circle cover, LightCoral 0%, red 100%, blue 5%);
+  border: 1px solid red;
+}
+
+.yellow-light-40 {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 20px;
+  background-image: -moz-radial-gradient(15px 15px 45deg, circle cover, yellow 0%, #f89406 100%, blue 5%);
+  background-image: -webkit-radial-gradient(15px 15px, circle cover, yellow, #f89406);
+  background-image: radial-gradient(15px 15px 45deg, circle cover, yellow 0%, #f89406 100%, blue 5%);
+  border: 1px solid #f89406;
+}
+
+.grey-light-40 {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 20px;
+  background-image: -moz-radial-gradient(15px 15px 45deg, circle cover, white 0%, grey 100%, blue 5%);
+  background-image: -webkit-radial-gradient(15px 15px, circle cover, white, grey);
+  background-image: radial-gradient(15px 15px 45deg, circle cover, white 0%, grey 100%, blue 5%);
+  border: 1px solid grey;
+}

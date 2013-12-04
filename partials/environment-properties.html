@@ -1,0 +1,41 @@
+<div>
+    <div class="panel" ng-class="statusObject.statusIcon.getPanelClassColor()">
+        <div class="panel-heading">
+            <span ng-class="statusObject.statusIcon.getStatusClassColor() " class="circle circle-small circle-env-detail"></span>
+            <h4>
+                <a href="{{ url }}" target="_blank">{{ heading }}</a>
+                <small ng-if="statusObject.statusIcon.type !== 'SUCCESS'">This environment is currently unavailable so any information shown could be out of date.</small>
+                <small ng-if="statusObject.statusIcon.type === 'WARNING'"><span class="glyphicon glyphicon-question-sign" tooltip="warningTooltip"></span></small>
+                <small ng-if="statusObject.statusIcon.type === 'FAIL'"><span class="glyphicon glyphicon-question-sign" tooltip="failTooltip"></span></small>
+            </h4>
+        </div>
+        <div class="panel-body">
+            <table class="table table-hover">
+                <tbody>
+                <tr ng-repeat="(key, value) in statusObject | ignoreEnvironmentProperties" ng-class="statusObject.environmentInfoClass">
+                    <th>{{ key }}</th>
+                    <td>
+                        <div ng-switch on="(key === 'bloomhealthService' || key === 'employerService' || key === 'productService' || key === 'memberService' || key === 'eventAuditService')">
+                            <div ng-switch-when="true">
+                                <a href="javascript:void(0);" ng-click="toggleServiceDisplay()" ng-show="!servicesOpen" tooltip="'View all {{ envTitle }} {{ heading }} Services'"><span class="glyphicon glyphicon-collapse-down"></span></a>
+                                <a href="javascript:void(0);" ng-click="toggleServiceDisplay()" ng-show="servicesOpen" tooltip="'Hide all {{ envTitle }} {{ heading }} Services'"><span class="glyphicon glyphicon-collapse-up"></span></a>
+                                <table class="table table-condensed table-striped slide-animation fade-animation" ng-if="servicesOpen">
+                                    <tr ng-repeat="(iKey, iVal) in statusObject[key]">
+                                        <th>{{ iKey }}</th>
+                                        <td>
+                                            <environment-property-value key="iKey" value="iVal"></environment-property-value>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div ng-switch-default>
+                                <environment-property-value key="key" value="value"></environment-property-value>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

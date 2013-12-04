@@ -1,0 +1,28 @@
+.batch-job {
+	> header {
+		.status-light {
+			float: left;
+		}
+
+		h1, h2, h3 {
+			color: #0088cc;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+	}
+
+	> footer {
+		> p {
+			text-align: left;
+		}
+	}
+}
+
+.view-switcher {
+	float: right;
+}
+
+.fixed-nav-header {
+	margin-top: 50px;
+}

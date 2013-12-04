@@ -1,0 +1,37 @@
+<div class="container-fluid all-environments">
+
+    <div class="row">
+        <div class="span4 well" ng-repeat="env in flatten(environmentGroups) track by $index">
+            <div class="env">
+
+                <h1>
+                    {{env.title}}
+                    <a href="#/environments/{{env.groupId}}#{{env.id}}" class="env-title pull-right">
+                        <span class="glyphicon glyphicon-info-sign"></span>
+                    </a>
+                </h1>
+
+                <div>
+                    <span class="circle circle-small {{ env.bloomhealthStatus.statusIcon.getStatusClassColor() }}"></span>
+                    <a href="{{env.bloomhealthUrl}}" target="_blank" class="env-name">Bloomhealth</a>
+                    <span>{{ env.bloomhealthStatus.appVersion }}</span>
+                </div>
+
+                <div>
+                    <span class="circle circle-small {{ env.grandpaStatus.statusIcon.getStatusClassColor() }}"></span>
+                    <a href="{{env.grandpaUrl}}" target="_blank" class="env-name">Grandpa</a>
+                    <span>{{ env.grandpaStatus.appVersion }}</span>
+                </div>
+
+                <div>
+                    <span class="circle circle-small {{ env.bhboStatus.statusIcon.getStatusClassColor() }}"></span>
+                    <a href="{{env.bhboUrl}}" target="_blank" class="env-name">BHBO</a>
+                    <span>{{ env.bhboStatus.appVersion }}</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-include src="'partials/footer.html'"></div>

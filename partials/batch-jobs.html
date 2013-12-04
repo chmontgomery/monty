@@ -1,0 +1,104 @@
+<div ng-switch on="view">
+	<div ng-switch-when="dashboard">
+		<div class="container-fluid dash" >
+			<div class="row">
+	    		<div class="span5" ng-repeat="job in jobs">
+					<div class="batch-job well well-large">
+						<header>
+							<div class="{{job.light}}-light-40 status-light"></div>
+							<h3>{{job.jobKey}}</h3>
+							<p class="muted">{{job.jobKey}}</p>
+						</header>
+
+					    <table class="table table-condensed">
+					    	<thead>
+					    		<tr>
+					    			<th>Result</th>
+					    			<th>Count</th>
+					    		</tr>
+					    	</thead>
+					        <tbody>
+					            <tr>
+					                <td>Success</td><td><span class="badge badge-success">{{job.success}}</span></td>
+					            </tr>
+					            <tr>
+					                <td>Failure</td><td><span class="badge badge-important">{{job.failure}}</span></td>
+					            </tr>
+					            <tr>
+					                <td>Misfire</td><td><span class="badge badge-warning">{{job.misfire}}</span></td>
+					            </tr>
+					        </tbody>
+					    </table>
+
+						<footer>
+							<table class="table table-condensed">
+								<tbody>
+									<tr>
+										<td>Last Run</td><td>{{job.lastRun | date:'MM/dd/yyyy h:mm:ss a'}}</td>
+									</tr>
+								</tbody>
+							</table>
+						</footer>
+					</div>
+	    		</div>
+	    	</div>
+		</div>
+	</div>
+	<div ng-switch-default>
+		<div class="logo-main"></div>
+		<header class="fixed-nav-header">
+			<div class="container">
+			    <div class="well well-large">
+			    	<div class="view-switcher">
+			    		<a href="/#/batch_jobs/dashboard/{{search.env.key}}" class="btn" ng-show="jobs">Switch to Dashboard</a>
+			    	</div>
+
+			    	<h1>Batch Jobs</h1>
+			    	<form ng-submit="doSearch()">
+			    		<fieldset>
+		    				<label for="srchStartDate">Date Range</label>
+			    			<input type="text" name="startDate" id="startDate" class="input-small datepicker"
+			    				placeholder="Start Date" ng-model="search.startDate" />
+			    			<input type="text" name="endDate" id="endDate" class="input-small datepicker"
+			    				placeholder="End Date" ng-model="search.endDate" />
+
+			    			<label for="srchEnvironment">Environment</label>
+			    			<select ng-model="search.env" ng-options="e.name for e in envOptions"></select>
+			    		</fieldset>
+
+			    		<button id="srchBtn" type="submit" class="btn btn-primary btn-large">{{search.searchBtnLabel}}</button>
+			    	</form>
+			    </div>
+			</div>
+		</header>
+
+	    <div class="container">
+	    	<div class="well" ng-show="jobs">
+	    	<table class="table table-striped table-hover">
+	    		<thead>
+	    			<tr>
+	    				<th>status</th>
+	    				<th>key</th>
+	    				<th>last run</th>
+	    				<th>stats</th>
+	    			</tr>
+	    		</thead>
+	    		<tbody>
+		    		<tr ng-repeat="job in jobs">
+		    			<td><div class="{{job.light}}-light-16 status-light"></div></td>
+		    			<td>{{job.jobKey}}</td>
+		    			<td>{{job.lastRun | date:'M/d/yyyy h:mm:ss a'}}</td>
+		    			<td>
+		    				<span class="badge badge-success" tooltip="successTooltip">{{job.success}}</span>
+		    				<span class="badge badge-important" tooltip="failureTooltip">{{job.failure}}</span>
+		    				<span class="badge badge-warning" tooltip="misfireTooltip">{{job.misfire}}</span>
+		    			</td>
+		    		</tr>
+	    		</tbody>
+	    	</table>
+	    </div>
+	    </div>
+	</div>
+</div>
+
+<div ng-include src="'partials/footer.html'"></div>

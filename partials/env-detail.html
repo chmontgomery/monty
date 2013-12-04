@@ -1,0 +1,86 @@
+<div>
+    <div class="loading-shim"></div>
+    <div class="logo-main"></div>
+    <div class="container detail">
+        <div class="well">
+            <h1>{{group.title}} Environment{{(group.environments.length > 1) && "s" || ""}}</h1>
+            <div class="group-container">
+                <dl class="dl-horizontal">
+                    <dt>Purpose</dt>
+                    <dd>{{group.purpose}}</dd>
+                    <dt>Deploy Branch</dt>
+                    <dd>{{group.deployBranch}}</dd>
+                    <dt>Who can deploy</dt>
+                    <dd>{{group.whoCanDeploy}}</dd>
+                    <dt>Database</dt>
+                    <dd>{{group.database}}</dd>
+                    <dt>bucketName</dt>
+                    <dd>{{group.bucketName}}</dd>
+                </dl>
+                <div ng-repeat="env in group.environments" class="env">
+                    <div id="{{env.id}}" class="env-anchor"></div>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h2>{{env.title}}</h2>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-hover" ng-if="env.id !== 'production1'">
+                                <tbody>
+                                <tr>
+                                    <th>Bloomhealth/BHBO DB Host</th><td>{{env.mySqlHost}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Bloomhealth/BHBO DB Port</th><td>{{env.mySqlPort}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Radiant DB Host</th><td>{{env.radiantDBHost}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Radiant DB Port</th><td>{{env.radiantDBPort}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Redis DB Host</th><td>{{env.redisHost}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Redis DB Port</th><td>{{env.redisPort}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <table class="table table-hover" ng-if="env.id === 'production1'">
+                                <tbody>
+                                <tr>
+                                    <th>RabbitMQ</th><td><a href="{{env.rabbitMQUrl}}" target="_blank">{{env.rabbitMQUrl}}</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <environment-properties
+                                    status-object="env.bloomhealthStatus"
+                                    url="env.bloomhealthUrl"
+                                    heading="Bloomhealth"
+                                    env-title="env.title"></environment-properties>
+                            <environment-properties
+                                    status-object="env.grandpaStatus"
+                                    url="env.grandpaUrl"
+                                    heading="Grandpa"
+                                    env-title="env.title"></environment-properties>
+                            <environment-properties
+                                    status-object="env.bhboStatus"
+                                    url="env.bhboUrl"
+                                    heading="BHBO"
+                                    env-title="env.title"></environment-properties>
+                            <div ng-if="env.batchStatusUrl">
+                                <environment-properties
+                                        status-object="env.batchStatus"
+                                        url="env.batchUrl"
+                                        heading="Batch"
+                                        env-title="env.title"></environment-properties>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div ng-include src="'partials/footer.html'"></div>
+</div>
